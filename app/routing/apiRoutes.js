@@ -28,14 +28,33 @@ module.exports = function(app) {
     // API POST Requests
     // Create New Friend - takes in JSON input
     app.post("/api/friends", function(req, res) {
-        // req.body hosts is equal to the JSON post sent from the user
-        // This works because of our body parsing middleware
         var newFriend = req.body;
-    
-        console.log(newFriend);
+
+        let lowestTotal = 0;
+        let match = undefined;
+        for(const friend of friendsData)
+        {
+            let total = 0;
+
+            //Compare each user's score to other users' scores
+            for (let i = 0; i < friend.scores.length; i++) {
+                total += Math.abs(Number.parseInt(req.body.scores[i]) - Number.parseInt(friend.scores[i]));
+            }
+
+            //The first time, get the the first user
+            if (match === undefined) {
+                match = friend;
+                lowestTotal = total;
+            }
+            //check if user is lower than the previous user
+            else if (total < lowestTotal) {
+                match = friend;
+                lowestTotal = total;
+            }
+        }
     
         friendsData.push(newFriend);
-    
-        res.json(newFriend);
+
+        res.json(match);
     });
-}
+};

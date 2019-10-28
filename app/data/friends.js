@@ -2,8 +2,24 @@
 // =============================================================
 var friends = [
     {
-        "name":"Ahmed",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "name":"Fred",
+        "photo":"https://www.dictionary.com/e/wp-content/uploads/2018/03/Freddy-Krueger.jpg",
+        "scores":[
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "name":"Jason",
+        "photo":"https://vignette.wikia.nocookie.net/headhuntersholosuite/images/d/de/Jason_8_001.jpg/revision/latest/scale-to-width-down/225?cb=20180714161853",
         "scores":[
             "5",
             "1",
@@ -15,6 +31,22 @@ var friends = [
             "5",
             "4",
             "1"
+        ]
+    },
+    {
+        "name":"Mike",
+        "photo":"https://www.bleedingcool.com/2017/02/09/john-carpenter-announces-new-halloween-film-facebook/michael-myers/#main",
+        "scores":[
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5"
         ]
     }
 ];
